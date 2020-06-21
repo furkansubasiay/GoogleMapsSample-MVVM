@@ -15,7 +15,6 @@ import com.furkansubasiay.googlemaps_sample_mvvvm.util.Utils
 open class BaseActivity :AppCompatActivity() {
 
 
-
     protected fun actionbarInit(includeToolbar: IncludeToolbarBinding,title:String, isEnableNavi: Boolean) {
         setSupportActionBar(includeToolbar.toolbar)
         setTitle(title)
@@ -23,30 +22,6 @@ open class BaseActivity :AppCompatActivity() {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             includeToolbar.toolbar.setNavigationOnClickListener {
                 onBackPressed()
-            }
-        }
-    }
-
-    var progressDialog: ProgressDialog? = null
-
-    fun showLoading(context: Context) {
-
-        if(progressDialog==null)
-        {
-            progressDialog = Utils.showLoadingDialog(context)
-        }
-
-        if(progressDialog!=null && !progressDialog!!.isShowing)
-        {
-            progressDialog!!.show()
-        }
-    }
-
-
-    fun hideLoading() {
-        if (progressDialog != null) {
-            if (progressDialog!!.isShowing) {
-                progressDialog!!.dismiss()
             }
         }
     }

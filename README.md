@@ -19,9 +19,6 @@ The app uses MVVM [Model-View-ViewModel] architecture to have a unidirectional f
    - Koin - DI
    - Glide 
    
-## Clean Simple Architecture
-
-![](https://github.com/furkansubasiay/marvelist/blob/master/app/src/main/res/raw/architecture.png)
 
 ## License
 

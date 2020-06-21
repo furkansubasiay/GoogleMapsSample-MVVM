@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply from: 'obfuscationUtils.gradle'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -14,6 +15,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'API_BASE_URL', obfuscateJavaToByteString("https://maps.googleapis.com/maps/api/")
+        buildConfigField 'String', 'API_KEY_VALUE', obfuscateJavaToByteString("AIzaSyCPWJdSXcwnH4nSduZasxeTM6JFCXILu_k")
+
     }
     buildTypes {
         release {
@@ -61,7 +66,9 @@ dependencies {
 
     //LiveData and ViewModel
     api "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     //Retrofit
     api "com.squareup.retrofit2:retrofit:$retrofit_version"
     api "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
@@ -82,9 +89,11 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
-    //Rxjava
-    api "io.reactivex.rxjava2:rxjava:$rxjava_version"
-    api "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    //Koin
+    implementation "org.koin:koin-android:$koin_version" // for Android
+    implementation "org.koin:koin-androidx-scope:$koin_version" // for Android Scope features
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version" // Android ViewModel features
+    testApi "org.koin:koin-test:$koin_version" // for Unit tests
 
 
     testImplementation 'junit:junit:4.13'

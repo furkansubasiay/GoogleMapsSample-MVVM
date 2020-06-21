@@ -1,20 +1,22 @@
 package com.furkansubasiay.googlemaps_sample_mvvvm.network
 
+import com.furkansubasiay.googlemaps_sample_mvvvm.BuildConfig
 import com.furkansubasiay.googlemaps_sample_mvvvm.model.PlacesResponce
-import io.reactivex.Single
+import org.koin.core.KoinComponent
+import retrofit2.Response
 
 /**
  * Created by FURKAN SUBAŞIAY on 2020-06-20.
  */
 
-class Repository{
+class Repository : KoinComponent {
 
     val serviceClient by lazy {
-        Api.create()
+        Service.create()
     }
 
-    fun getPlaces(text:String): Single<PlacesResponce> {
-        return serviceClient.getPlaces(text,"AIzaSyCPWJdSXcwnH4nSduZasxeTM6JFCXILu_k")
+    suspend fun getPlaces(text:String): Response<PlacesResponce> {
+        return serviceClient.getPlaces(text,BuildConfig.API_KEY_VALUE)
     }
 
 }

@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import com.furkansubasiay.googlemaps_sample_mvvvm.R
 import com.furkansubasiay.googlemaps_sample_mvvvm.databinding.FragmentDetailBinding
 import com.furkansubasiay.googlemaps_sample_mvvvm.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.include_toolbar.view.*
 
 
 class DetailFragment : BaseFragment() {
@@ -30,12 +31,10 @@ class DetailFragment : BaseFragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail, container, false)
         rootView = binding.root
         binding.lifecycleOwner = this
-        //actionbarInit(binding.toolbar,applicationContext.resources.getString(R.string.title_detail), true)
-        binding.toolbar.toolbar.title=context!!.resources.getString(R.string.title_detail)
+        binding.toolbar.toolbar.setTitle(context!!.resources.getString(R.string.title_detail))
         binding.viewModel = viewModel
         return rootView
 
     }
-
 
 }

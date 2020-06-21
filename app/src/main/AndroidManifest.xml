@@ -17,10 +17,8 @@
         tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="m">
 
-        <activity android:name=".ui.detail.DetailActivity"/>
-        <activity android:name=".ui.map.MapsActivity" />
-        <activity android:name=".ui.place.PlaceSearchActivity" />
-        <activity android:name=".ui.RootActivity">
+        <activity android:name=".ui.RootActivity"
+            android:configChanges="orientation|navigation|screenLayout|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

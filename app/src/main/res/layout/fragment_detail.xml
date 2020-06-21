@@ -49,8 +49,9 @@
                         android:id="@+id/txt_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:gravity="center"
                         android:text="@{viewModel.selectedPlaceItem.name}"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:textColor="@color/colorTextDark"
                         android:textStyle="bold"
                         tools:text="İstanbul" />
@@ -69,6 +70,7 @@
                         android:id="@+id/txt_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
                         android:text="@{viewModel.selectedPlaceItem.address}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@color/colorTextDark"

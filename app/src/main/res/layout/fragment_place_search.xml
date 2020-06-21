@@ -33,12 +33,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?attr/colorPrimary"
+                    android:focusable="auto"
+                    android:focusableInTouchMode="true"
                     android:minHeight="?attr/actionBarSize"
                     android:theme="?attr/actionBarTheme"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:titleTextColor="@color/colorWhite">
 
                     <EditText
                         android:id="@+id/edt_search"
@@ -55,6 +58,7 @@
                         android:singleLine="true"
                         android:text="@={viewModel.ınputQuery}"
                         android:textColor="@color/colorWhite"
+                        android:textColorHint="@color/colorWhite"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -63,14 +67,7 @@
 
 
             </RelativeLayout>
-            <!-- <include
-                 android:id="@+id/toolbar"
-                 layout="@layout/include_search_toolbar"
-                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content"
-                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintStart_toStartOf="parent"
-                 app:layout_constraintTop_toTopOf="parent" />-->
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/search_list"

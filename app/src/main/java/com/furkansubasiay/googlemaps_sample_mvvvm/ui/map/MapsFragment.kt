@@ -23,6 +23,7 @@ import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.include_toolbar.view.toolbar
 
 
 class MapsFragment : BaseFragment(), OnMapReadyCallback,GoogleMap.OnInfoWindowClickListener {
@@ -42,8 +43,7 @@ class MapsFragment : BaseFragment(), OnMapReadyCallback,GoogleMap.OnInfoWindowCl
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_maps, container, false)
         rootView = binding.root
         binding.lifecycleOwner = this
-        //activity.toolbar)actionbarInit(binding.toolbar,context.resources.getString(R.string.title_maps),true)
-        binding.toolbar.toolbar.title=context!!.resources.getString(R.string.title_maps)
+        binding.toolbar.toolbar.setTitle(context!!.resources.getString(R.string.title_maps))
         binding.viewModel = viewModel
         initMap()
         return rootView

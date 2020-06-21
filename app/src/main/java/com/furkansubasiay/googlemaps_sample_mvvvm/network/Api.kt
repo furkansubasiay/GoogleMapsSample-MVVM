@@ -3,6 +3,7 @@ package com.furkansubasiay.googlemaps_sample_mvvvm.network
 import com.furkansubasiay.googlemaps_sample_mvvvm.model.PlacesResponce
 import io.reactivex.Single
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -13,7 +14,7 @@ import retrofit2.http.Query
 interface Api {
 
     @GET(" place/textsearch/json")
-   suspend fun getPlaces(@Query("query") query:String, @Query("key") key:String): PlacesResponce
+    fun getPlaces(@Query("query") query:String, @Query("key") key:String): Single<PlacesResponce>
 
 
     companion object{
@@ -21,6 +22,7 @@ interface Api {
 
             fun create(): Api {
                 val retrofit = Retrofit.Builder()
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(BASE_URL)
                     .build()

@@ -8,18 +8,22 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.furkansubasiay.googlemaps_sample_mvvvm.databinding.IncludeToolbarBinding
 import com.furkansubasiay.googlemaps_sample_mvvvm.util.Utils
+import com.furkansubasiay.googlemaps_sample_mvvvm.vm.PlacesViewModel
 import com.furkansubasiay.googlemaps_sample_mvvvm.vm.base.BaseViewModel
 
 /**
  * Created by FURKAN SUBAŞIAY on 2020-06-20.
  */
 @SuppressLint("Registered")
-open class BaseActivity<VM: BaseViewModel>(private var viewModelClass: Class<VM>) :AppCompatActivity() {
+open class BaseActivity :AppCompatActivity() {
 
-    protected val viewModel:VM by lazy { ViewModelProviders.of(this, viewModelFactory).get(viewModelClass) }
+   // internal lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    protected fun actionbarInit(includeToolbar: IncludeToolbarBinding, isEnableNavi: Boolean) {
+   // protected val viewModel:PlacesViewModel by lazy { ViewModelProviders.of(this@BaseActivity).get(PlacesViewModel::class.java) }
+
+    protected fun actionbarInit(includeToolbar: IncludeToolbarBinding,title:String, isEnableNavi: Boolean) {
         setSupportActionBar(includeToolbar.toolbar)
+        setTitle(title)
         if (isEnableNavi) {
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
             includeToolbar.toolbar.setNavigationOnClickListener {
@@ -29,7 +33,7 @@ open class BaseActivity<VM: BaseViewModel>(private var viewModelClass: Class<VM>
     }
 
     var progressDialog: ProgressDialog? = null
-    internal lateinit var viewModelFactory: ViewModelProvider.Factory
+
     fun showLoading(context: Context) {
 
         if(progressDialog==null)

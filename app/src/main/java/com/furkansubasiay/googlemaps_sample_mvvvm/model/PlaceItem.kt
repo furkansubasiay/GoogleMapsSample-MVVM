@@ -7,10 +7,10 @@ import com.google.gson.annotations.SerializedName
  */
 
 data class PlaceItem(
-    @SerializedName("id") val id: String,
-    @SerializedName("name") val name: String,
-    @SerializedName("geometry") val geometry: Geometry,
-    @SerializedName("formatted_address") val address: String,
+    @SerializedName("id") val id: String?,
+    @SerializedName("name") val name: String?,
+    @SerializedName("geometry") val geometry: Geometry?,
+    @SerializedName("formatted_address") val address: String?,
     @SerializedName("icon") val iconUrl: String?
 )
 
@@ -19,6 +19,6 @@ data class Geometry(
 )
 
 data class  Location(
-    @SerializedName("latitude") val latitude: Double,
-    @SerializedName("longitude") val longitude: Double
+    @SerializedName("lat") val latitude: Double,
+    @SerializedName("lng") val longitude: Double
 )

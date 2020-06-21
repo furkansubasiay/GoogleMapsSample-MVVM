@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
 
-    <string name="google_maps_key" translatable="false">AIzaSyCvPb9i9d_y9dgwJIFokQo0lbdWxTSWCK0</string>
+    <string name="google_maps_key" translatable="false">AIzaSyCPWJdSXcwnH4nSduZasxeTM6JFCXILu_k</string>
 
 </resources>

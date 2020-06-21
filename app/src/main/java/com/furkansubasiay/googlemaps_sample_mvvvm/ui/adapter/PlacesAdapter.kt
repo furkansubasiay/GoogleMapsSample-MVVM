@@ -26,11 +26,6 @@ class PlacesAdapter : RecyclerView.Adapter<PlacesAdapter.ViewHolder> {
         this.listener = listener
     }
 
-    constructor(list: MutableList<PlaceItem>) : super() {
-        this.placeItemList = list
-        this.listener = null
-    }
-
     fun setList(list: MutableList<PlaceItem>) {
         placeItemList = list
         notifyDataSetChanged()

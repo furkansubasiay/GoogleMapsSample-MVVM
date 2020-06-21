@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">GoogleMaps-Sample-MVVVM</string>
+
+    <!--Message-->
+    <string name="no_connection_message">Lütfen internet bağlantınızı kontrol ediniz.</string>
+    <string name="unknown_error_message">Bilinmeyen bir hata oluştu! Tekrar deneyiniz.</string>
+
+
+    <string name="hint_search">Arama Yapın</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

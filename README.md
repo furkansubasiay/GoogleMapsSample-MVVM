@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Kotlin-1.3.xxx-brightgreen.svg) ![](https://img.shields.io/badge/Kotlin--Android--Extensions-plugin-red.svg) ![](https://img.shields.io/badge/Clean--Code-MVVM-brightgreen.svg) ![](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)
 
 
-![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/search_screen.png) ![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/map_screen.png) ![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/detail_screen.png) 
+![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/search_screen.png)     ![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/map_screen.png)     ![](https://github.com/furkansubasiay/GoogleMapsSample-MVVM/blob/master/app/src/main/res/raw/detail_screen.png) 
 
 
 ## Architecture
